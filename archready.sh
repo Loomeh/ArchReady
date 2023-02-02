@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/bash
 
 # COLOR VARIABLES
 RED="\e[31m"

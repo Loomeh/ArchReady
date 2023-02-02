@@ -24,15 +24,15 @@ if zenity --question --width 300 --title="Install graphics drivers?" --text="Wou
 	{
 		if zenity --question --width 300 --title="Select your GPU." --text="Do you have an Nvidia graphics card?"; then
 		{
-			sudo pacman -S --needed nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader	
+			sudo pacman -S --noconfirm --needed nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader	
 		} fi
 		if zenity --question --width 300 --title="Select your GPU." --text="Do you have an AMD graphics card?"; then
 		{
-			sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
+			sudo pacman -S --noconfirm --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
 		} fi
 		if zenity --question --width 300 --title="Select your GPU." --text="Do you have an Intel graphics card? (Don't install this if you already have a dedicated GPU driver installed)"; then
 		{
-			sudo pacman -S --needed lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
+			sudo pacman -S --noconfirm --needed lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
 		} fi
 	}
 fi

@@ -25,3 +25,6 @@ Or if you want to run from source:
     chmod +x ./archready.sh
     ./archready.sh
 
+# Credits
+[NayamAmarshe](https://github.com/NayamAmarshe) - for creating GameReady
+[GhoulBoii](https://github.com/GhoulBoii) - for creating the original Arch Linux port

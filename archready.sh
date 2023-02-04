@@ -58,8 +58,8 @@ if zenity --question --width 300 --title="Enable Chaotic AUR?" --text="Would you
 	sudo pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
 	sudo pacman-key --lsign-key FBA220DFC880C036
 	sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
-	sudo echo "[chaotic-aur]" >> /etc/pacman.conf
-	sudo echo "Include = /etc/pacman.d/chaotic-mirrorlist" >> /etc/pacman.conf
+	echo "[chaotic-aur]" | sudo tee -a /etc/pacman.conf
+	echo "Include = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
 	sudo pacman -Syu --noconfirm
 }
 fi
@@ -84,8 +84,8 @@ sudo pacman -S --noconfirm gamemode lib32-gamemode
 # INSTALL XANMOD
 if zenity --question --width 300 --title="Install Xanmod Kernel?" --text="Your current kernel is $(uname -r). We're going to install Xanmod kernel next, Xanmod is for enabling extra performance patches for kernels. Do you want to install Xanmod? (This requires that you enabled the Chaotic AUR)"; then
 {
-	sudo pacman -S --noconfirm chaotic-aur/linux-xanmod
-	sudo pacman -S --noconfirm chaotic-aur/linux-xanmod-headers
+	sudo pacman -S --noconfirm linux-xanmod
+	sudo pacman -S --noconfirm linux-xanmod-headers
 	sudo grub-mkconfig -o /boot/grub/grub.cfg
 }
 fi

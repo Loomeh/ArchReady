@@ -45,7 +45,7 @@ if zenity --question --width 300 --title="Install graphics drivers?" --text="Wou
 			sudo pacman -S --noconfirm --needed lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
 		} fi
 	}
-fi
+fi;
 
 # INSTALL PARU
 echo -e "\n\n${RED}<-- Installing PARU -->${ENDCOLOR}"
@@ -72,7 +72,7 @@ if zenity --question --width 300 --title="Enable Chaotic AUR?" --text="Would you
 	echo "Include = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
 	sudo pacman -Syu --noconfirm
 }
-fi
+fi;
 
 # INSTALL WINE
 echo -e "\n\n${RED}<-- Installing WINE -->${ENDCOLOR}"
@@ -98,7 +98,7 @@ if zenity --question --width 300 --title="Install Xanmod Kernel?" --text="Your c
 	sudo pacman -S --noconfirm linux-xanmod-headers
 	sudo grub-mkconfig -o /boot/grub/grub.cfg
 }
-fi
+fi;
 
 # INSTALL WINETRICKS DEPENDENCIES
 zenity --warning --title="Alright Listen Up" --width 300 --text="Now we're going to install dependencies for WINE like DirectX, Visual C++, DotNet and more. Winetricks will try to install these dependencies for you, so it'll take some time. Do not panic if you don't receive visual feedback, it'll take time."
